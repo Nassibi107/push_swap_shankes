@@ -6,17 +6,16 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/09 17:03:41 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:40:36 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "src/functions/fun.h"
-
 
 static void	err(void)
 {
 	ft_putendl_fd("Error", 2);
+	exit(1);
 }
 
 static int	is_empty(char *str)
@@ -33,9 +32,9 @@ static int	is_empty(char *str)
 
 char	**input_checker(int ac, char **av)
 {
-	char		*str;
-	char		**rst;
-	int			len;
+	char	*str;
+	char	**rst;
+	int		len;
 
 	len = ft_lenjoin(av, ac);
 	str = ft_join(av, len, ac);
@@ -45,35 +44,46 @@ char	**input_checker(int ac, char **av)
 	return (0x0);
 }
 
-int	main(int ac, char **av)
+static int	ft_parsing(int ac, char **av)
 {
-	t_stack	*sa;
-	t_stack	*sb;
 	int		j;
 	int		e;
 
 	j = 1;
 	e = 0;
-	if (ac  > 1)
+	while (j < ac)
 	{
-		while (j < ac)
-		{
-			if (is_empty(av[j++]))
-				e += 1;
-		}
-		if (!e)
-		{
-			if (input_checker(ac, av))
-			{
-				ft_build_sa(input_checker(ac, av), &sa);
-				ft_switch(sa,sb);
-			}
-			else
-				err();
-		}
+		if (is_empty(av[j++]))
+			e += 1;
+	}
+	if (!e)
+	{
+		if (input_checker(ac, av) != NULL)
+			return (1);
 		else
-			err();
+			return (0);
 	}
 	else
-		exit(1);
+		return (0);
+}
+
+int	main(int ac, char **av)
+{
+	t_stack	*sa;
+	t_stack	*sb;
+
+	sb = NULL;
+	sa = NULL;
+	if (ft_parsing(ac,av))
+	{
+		if (ac > 1)
+		{
+			ft_build_sa(input_checker(ac, av), &sa);
+			ft_switch(sa, sb);
+		}
+		else
+			exit(1);
+	}
+	else
+		err();
 }
