@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:25:10 by abechcha          #+#    #+#             */
-/*   Updated: 2024/01/25 14:51:44 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:18:07 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_applay1(t_store **head, t_list **stack_a, t_list **stack_b)
 	else if (ft_strncmp((*head)->content, "rb", 2) == 0)
 		rotate(stack_b);
 	else if (ft_strncmp((*head)->content, "rr", 2) == 0)
-		ft_rr(stack_a, stack_b);
+		rotate_ab(stack_a, stack_b);
 	else if (ft_strncmp((*head)->content, "pb", 2) == 0)
 		ft_push(stack_a, stack_b);
 	else if (ft_strncmp((*head)->content, "pa", 2) == 0)
@@ -66,15 +66,15 @@ void	ft_applay(t_store **head, t_list **stack_a, t_list **stack_b)
 	while (*head)
 	{
 		if (ft_strncmp((*head)->content, "sa", 2) == 0)
-			ft_lstswap(stack_a);
+			swap(stack_a);
 		else if (ft_strncmp((*head)->content, "rra", 3) == 0)
 			rrotate(stack_a);
 		else if (ft_strncmp((*head)->content, "rrb", 3) == 0)
 			rrotate(stack_b);
 		else if (ft_strncmp((*head)->content, "rrr", 3) == 0)
-			ft_rrr(stack_a, stack_b);
+			rrotate_ab(stack_a, stack_b);
 		else if (ft_strncmp((*head)->content, "sb", 2) == 0)
-			ft_lstswap(stack_b);
+			swap(stack_b);
 		else
 			ft_applay1(head, stack_a, stack_b);
 		(*head) = (*head)->next;

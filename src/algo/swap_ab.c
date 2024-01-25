@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrotate.c                                       :+:      :+:    :+:   */
+/*   swap_ab.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 11:50:16 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:36:54 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/25 18:17:39 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/25 18:20:03 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "algo.h"
 
-
-void	rrotate(t_stack **head, int flag)
+void	swap_ab(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*p;
-	t_stack	*tmp1;
-	t_stack	*tmp;
-	int		index;
-
-	if (flag == 1)
-		ft_putendl_fd("rra",1);
-	else if (flag == 0)
-		ft_putendl_fd("rrb",1);
-	p = *head;
-	tmp = ft_last(p);
-	index = get_lstsize(p);
-	tmp1 = ft_find_node(p, index - 1);
-	tmp->next = p;
-	tmp1->next = NULL;
-	*head = tmp;
+	ft_putendl_fd("ss", 1);
+	swap(stack_a, 2);
+	swap(stack_b, 2);
 }

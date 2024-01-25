@@ -12,7 +12,7 @@
 
 #include "bonus.h"
 
-void	ft_rrr(t_list **stack_a, t_list **stack_b)
+void	rrotate_ab(t_list **stack_a, t_list **stack_b)
 {
 	if (*stack_a)
 		rrotate(stack_a);

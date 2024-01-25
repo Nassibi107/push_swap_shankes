@@ -13,12 +13,6 @@
 
 #include "algo.h"
 
-void	ft_rr(t_stack **sa, t_stack **sb)
-{
-	ft_putendl_fd("rr",1);
-	rotate(sa, 2);
-	rotate(sb, 2);
-}
 
 void	rotate(t_stack **head, int flag)
 {

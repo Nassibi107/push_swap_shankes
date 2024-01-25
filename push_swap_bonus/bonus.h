@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 09:29:04 by abechcha          #+#    #+#             */
-/*   Updated: 2024/01/25 14:51:44 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:18:07 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ int					ft_strlen(char *str);
 void				ft_free_linked_list(t_list **stack);
 void				ft_free_string(char **s);
 int					ft_strncmp(char *s1, char *s2, int n);
-void				ft_rr(t_list **stack_a, t_list **stack_b);
+void				rotate_ab(t_list **stack_a, t_list **stack_b);
 void				rotate(t_list **head);
 void				rrotate(t_list **head);
-void				ft_rrr(t_list **stack_a, t_list **stack_b);
+void				rrotate_ab(t_list **stack_a, t_list **stack_b);
 void				ft_ss(t_list **stack_a, t_list **stack_b);
-void				ft_lstswap(t_list **head);
+void				swap(t_list **head);
 int					ft_lstsize(t_list *stack);
 char				*ft_strjoin_free(char *s1, char *s2);
 char				*get_next_line(int fd);

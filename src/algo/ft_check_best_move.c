@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_best_move.c                               :+:      :+:    :+:   */
+/*   ft_check_jk_move.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,18 +14,18 @@
 
 #include "algo.h"
 
-void	ft_push_to_sa(t_stack **sb, t_stack **sa, t_stack *best)
+void	ft_push_to_sa(t_stack **sb, t_stack **sa, t_stack *jk)
 {
-	while (*sb != best || *sa != best->hook)
+	while (*sb != jk || *sa != jk->hook)
 	{
-		if (best->mv == 0 && best->hook->mv == 0)
+		if (jk->mv == 0 && jk->hook->mv == 0)
 			break ;
-		if (best->mv < 1 && best->hook->mv < 1)
-			ft_down(sa, sb, best);
-		else if (best->mv >= 1 && best->hook->mv >= 1)
-			ft_up(sa, sb, best);
+		if (jk->mv < 1 && jk->hook->mv < 1)
+			ft_down(sa, sb, jk);
+		else if (jk->mv >= 1 && jk->hook->mv >= 1)
+			ft_up(sa, sb, jk);
 		else
-			ft_down_up(sa, sb, best);
+			ft_down_up(sa, sb, jk);
 	}
 }
 
@@ -70,7 +70,7 @@ int	ft_index(t_stack **stack, int a)
 	return (-1);
 }
 
-void	ft_check_best_move(t_stack **sb, t_stack **sa)
+void	ft_check_jk_move(t_stack **sb, t_stack **sa)
 {
 	t_stack	*tmp;
 	int		size;

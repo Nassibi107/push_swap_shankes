@@ -1,44 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sub.c                            :+:      :+:    :+:   */
+/*   ft_down.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 11:57:53 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:37:11 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/25 17:57:44 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/25 18:14:49 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "algo.h"
 
-void	ft_sub(t_stack **stack_a, int **ar)
+void	ft_down(t_stack **sa, t_stack **sb, t_stack *jk)
 {
-	int	i;
-	int	j;
-	int	s;
-
-	i = 0;
-	s = get_lstmin(*stack_a);
-	while (i++ < s)
-		ar[0][i] = 1;
-	i = 1;
-	while (s > 1)
+	while (jk->mv != 0 || jk->hook->mv != 0)
 	{
-		j = 0;
-		while (j < i)
+		if (jk->mv != 0 && jk->hook->mv != 0)
 		{
-			if ((ft_find_node(*stack_a, i
-						+ 1)->value) > (ft_find_node(*stack_a, j
-						+ 1)->value) && ar[0][j] + 1 > ar[0][i])
-			{
-				ar[0][i] = ar[0][j] + 1;
-			}
-			j++;
+			rrotate_ab(sb, sa);
+			jk->mv = jk->mv + 1;
+			jk->hook->mv = jk->hook->mv + 1;
 		}
-		i++;
-		s--;
+		else if (jk->mv != 0 && jk->hook->mv == 0)
+		{
+			rrotate(sb, 0);
+			jk->mv = jk->mv + 1;
+		}
+		else if (jk->mv == 0 && jk->hook->mv != 0)
+		{
+			rrotate(sa, 1);
+			jk->hook->mv = jk->hook->mv + 1;
+		}
 	}
-	ft_setflag(stack_a, ar, get_lstsize(*stack_a));
 }

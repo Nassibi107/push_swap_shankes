@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrotate.c                                       :+:      :+:    :+:   */
+/*   ft_down_up.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 11:50:16 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:36:54 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/25 18:01:00 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/25 18:01:50 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "algo.h"
-
-
-void	rrotate(t_stack **head, int flag)
+void	ft_down_up(t_stack **sa, t_stack **sb, t_stack *jk)
 {
-	t_stack	*p;
-	t_stack	*tmp1;
-	t_stack	*tmp;
-	int		index;
-
-	if (flag == 1)
-		ft_putendl_fd("rra",1);
-	else if (flag == 0)
-		ft_putendl_fd("rrb",1);
-	p = *head;
-	tmp = ft_last(p);
-	index = get_lstsize(p);
-	tmp1 = ft_find_node(p, index - 1);
-	tmp->next = p;
-	tmp1->next = NULL;
-	*head = tmp;
+	while (jk->mv != 0 || jk->hook->mv != 0)
+	{
+		if (jk->mv > 0)
+		{
+			rotate(sb, 0);
+			jk->mv = jk->mv - 1;
+		}
+		else if (jk->mv < 0)
+		{
+			rrotate(sb, 0);
+			jk->mv = jk->mv + 1;
+		}
+		if (jk->hook->mv > 0)
+		{
+			rotate(sa, 1);
+			jk->hook->mv = jk->hook->mv - 1;
+		}
+		else if (jk->hook->mv < 0)
+		{
+			rrotate(sa, 1);
+			jk->hook->mv = jk->hook->mv + 1;
+		}
+	}
 }
