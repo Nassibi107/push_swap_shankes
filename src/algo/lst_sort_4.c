@@ -6,14 +6,14 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:57:46 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 11:46:03 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 17:24:37 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
 #include "algo.h"
-static void	helper1(t_stack **sa, t_stack *p)
+static void	d(t_stack **sa, t_stack *p)
 {
 	while ((*sa)->value != p->value)
 		rrotate(sa, 1);
@@ -35,7 +35,7 @@ void	lst_sort_4(t_stack **sa, t_stack **sb)
 		min_pos = get_lstmin(*sa);
 		p = get_lst_pos(*sa, min_pos);
 		if (min_pos > 2)
-			helper1(sa, p);
+			d(sa, p);
 		else
 			while ((*sa)->value != p->value)
 				rotate(sa, 1);

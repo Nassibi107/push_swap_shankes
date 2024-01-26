@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:40:36 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 17:54:25 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,6 @@ int	main(int ac, char **av)
 	}
 	else
 		err();
+	ft_free_linked_list(&sb);
+	ft_free_linked_list(&sa);
 }

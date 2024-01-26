@@ -6,14 +6,13 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:34:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:35:58 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 17:32:49 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef ALGO_H
 # define ALGO_H
 
-#include "../../push_swap.h"
+# include "../../push_swap.h"
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:01:00 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 15:48:39 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 17:34:13 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algo.h"
 
-static void case_1 (t_stack **sb, t_stack *jk)
+static void	case_1(t_stack **sb, t_stack *jk)
 {
 	if (jk->mv > 0)
 	{
@@ -25,7 +25,8 @@ static void case_1 (t_stack **sb, t_stack *jk)
 		jk->mv = jk->mv + 1;
 	}
 }
-static void case_2 (t_stack **sa, t_stack *jk)
+
+static void	case_2(t_stack **sa, t_stack *jk)
 {
 	if (jk->hook->mv > 0)
 	{
