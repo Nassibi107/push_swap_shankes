@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:01:05 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 11:51:04 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:36:38 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int					ft_check_character(char *str);
 int					get_lstmax(t_stack *sa);
 int					get_lstmin(t_stack *sa);
 int					get_lstsize(t_stack *sa);
+int					getnt_lstsub(int **tab, int i, int len);
 int					ft_is_int(char *str);
 void	swap_ab(t_stack **stack_a, t_stack **stack_b);
 void				rotate_ab(t_stack **sa, t_stack **sb);

@@ -14,7 +14,7 @@ SRCS_LG = src/algo/ft_down.c src/algo/ft_down_up.c src/algo/ft_push.c \
 		src/algo/ft_setflag.c src/algo/ft_sub.c src/algo/ft_up.c \
 		src/algo/get_lsthl.c  src/algo/hundler_moves.c src/algo/is_lstsort.c \
 		src/algo/lst_sort_3.c src/algo/lst_sort_4.c src/algo/push_lsthook.c \
-		src/algo/set_lsthl.c
+		src/algo/set_lsthl.c src/algo/getnt_lstsub.c
 
 SRCS_F = src/functions/rotate.c src/functions/rotate_ab.c src/functions/rrotate.c src/functions/rrotate_ab.c \
 			src/functions/shufting.c src/functions/sort.c src/functions/swap.c src/functions/swap_ab.c
