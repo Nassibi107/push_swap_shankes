@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstswap.c                                          :+:      :+:    :+:   */
+/*   rotate_ab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 11:58:38 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 18:18:07 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/25 18:11:20 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/26 11:26:45 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "fun.h"
 
-#include "algo.h"
-
-void	swap(t_stack **head, int flag)
+void	rotate_ab(t_stack **sa, t_stack **sb)
 {
-	t_stack	*tmp;
-
-	if (flag == 1)
-		ft_putendl_fd("sa", 1);
-	else if (flag == 0)
-		ft_putendl_fd("sb", 1);
-	tmp = (*head)->next;
-	(*head)->next = tmp->next;
-	tmp->next = *head;
-	*head = tmp;
+	rotate(sa, 2);
+	rotate(sb, 2);
+	ft_putendl_fd("rr",1);
 }

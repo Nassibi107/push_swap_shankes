@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:01:05 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 18:20:19 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 10:59:56 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ t_stack			*ft_lstnew(int content);
 void				ft_switch(t_stack *sa, t_stack *sb);
 void				ft_push(t_stack **src, t_stack **dest, int flag);
 void				shufting(t_stack **sa, t_stack **sb);
-void				ft_final_sort(t_stack **sa);
+void				sort(t_stack **sa);
 int				ft_is_sorted(t_stack **sa);
 t_stack			*ft_creat_stack(char **s);
 t_stack			*ft_last(t_stack *head);
 t_stack			*ft_find_node(t_stack *head, int a);
-int				ft_find_node_flag(t_stack **head);
+int				get_lstsub(t_stack **head);
 void				ft_push_flag(t_stack **sa, t_stack **sb);
 t_stack			*ft_find_target(int a, t_stack **sa);
 void				ft_set_target(t_stack **sa, t_stack **sb);
@@ -72,8 +72,8 @@ void				ft_up(t_stack **sa, t_stack **sb,
 						t_stack *jk);
 void				ft_down(t_stack **sa, t_stack **sb,
 						t_stack *jk);
-int					ft_index(t_stack **stack, int a);
-void				ft_check_jk_move(t_stack **sb, t_stack **sa);
+t_stack	*get_lst_pos(t_stack *head, int a);
+void				hundler_moves(t_stack **sb, t_stack **sa);
 void				ft_min_moves(t_stack **sa, t_stack **sb);
 void				ft_free_linked_list(t_stack **stack);
 void				ft_free_string(char **s);
@@ -82,5 +82,6 @@ void	ft_build_sa(char **str, t_stack **sa);
 int	is_double(char **rst);
 int	ft_lenjoin(char **av, int ac);
 char	*ft_join(char **av, int len, int ac);
+int	get_lst_id(t_stack **stack, int a);
 int	is_valid(char **rst);
 #endif

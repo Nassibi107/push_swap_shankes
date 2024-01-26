@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_lst_pos.c                                      :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 12:16:33 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 10:52:02 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/25 11:58:38 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/26 11:26:38 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+#include "fun.h"
 
-#include "tools.h"
-
-t_stack	*get_lst_pos(t_stack *head, int a)
+void	swap(t_stack **head, int flag)
 {
 	t_stack	*tmp;
-	int		i;
 
-	tmp = head;
-	i = 1;
-	while (i < a)
-	{
-		if (tmp->next)
-			tmp = tmp->next;
-		i++;
-	}
-	return (tmp);
+	if (flag == 1)
+		ft_putendl_fd("sa", 1);
+	else if (flag == 0)
+		ft_putendl_fd("sb", 1);
+	tmp = (*head)->next;
+	(*head)->next = tmp->next;
+	tmp->next = *head;
+	*head = tmp;
 }
-

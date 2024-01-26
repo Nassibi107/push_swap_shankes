@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:45:46 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:51:44 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 10:59:56 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_push_flag(t_stack **sa, t_stack **sb)
 	size = get_lstsize(*sa);
 	while (1)
 	{
-		i = ft_find_node_flag(sa);
+		i = get_lstsub(sa);
 		if (i == 0)
 			break ;
 		if (i > (size / 2))

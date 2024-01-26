@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_jk_move.c                               :+:      :+:    :+:   */
+/*   hundler_moves.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 11:39:02 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:59:52 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/26 10:43:09 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/26 10:54:13 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 
 #include "algo.h"
@@ -46,31 +45,16 @@ void	ft_min_moves(t_stack **sa, t_stack **sb)
 		}
 		tmp = tmp->next;
 	}
-	if (ft_index(sb, tmp1->value) >= get_lstsize(*sb) / 2)
+	if (get_lst_id(sb, tmp1->value) >= get_lstsize(*sb) / 2)
 		tmp1->mv = (tmp1->mv) * -1;
-	if (ft_index(sa, tmp1->hook->value) >= get_lstsize(*sa) / 2)
+	if (get_lst_id(sa, tmp1->hook->value) >= get_lstsize(*sa) / 2)
 		tmp1->hook->mv = tmp1->hook->mv * -1;
 	ft_push_to_sa(sb, sa, tmp1);
 }
 
-int	ft_index(t_stack **stack, int a)
-{
-	t_stack	*tmp;
-	int		i;
 
-	i = 0;
-	tmp = *stack;
-	while (tmp)
-	{
-		if (tmp->value == a)
-			return (i);
-		i++;
-		tmp = tmp->next;
-	}
-	return (-1);
-}
 
-void	ft_check_jk_move(t_stack **sb, t_stack **sa)
+void	hundler_moves(t_stack **sb, t_stack **sa)
 {
 	t_stack	*tmp;
 	int		size;
@@ -83,8 +67,8 @@ void	ft_check_jk_move(t_stack **sb, t_stack **sa)
 	{
 		size = get_lstsize(*sa);
 		size1 = get_lstsize(*sb);
-		index = ft_index(sa, tmp->hook->value);
-		index1 = ft_index(sb, tmp->value);
+		index = get_lst_id(sa, tmp->hook->value);
+		index1 = get_lst_id(sb, tmp->value);
 		if (index < size / 2)
 			tmp->hook->mv = index;
 		else if (index >= size / 2)
