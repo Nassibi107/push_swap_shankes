@@ -13,32 +13,38 @@
 
 #include "algo.h"
 
-void	ft_sub(t_stack **stack_a, int **ar)
+static void ft_gvone(t_stack **sa, int *tab, int minlst)
 {
 	int	i;
 	int	j;
-	int	s;
+	int	vj;
+	int	vi;
 
 	i = 0;
-	s = get_lstmin(*stack_a);
-	while (i++ < s)
-		ar[0][i] = 1;
-	i = 1;
-	while (s > 1)
+	while (--minlst > 1)
 	{
 		j = 0;
 		while (j < i)
 		{
-			if ((get_lst_pos(*stack_a, i
-						+ 1)->value) > (get_lst_pos(*stack_a, j
-						+ 1)->value) && ar[0][j] + 1 > ar[0][i])
-			{
-				ar[0][i] = ar[0][j] + 1;
-			}
+			vi = (get_lst_pos(*sa, i + 1)->value);
+			vj = (get_lst_pos(*sa, j + 1)->value);
+			if ( (vi > vj) && (tab[j] + 1 > tab[j]))
+				tab[j] = tab[j] + 1;
 			j++;
 		}
 		i++;
-		s--;
 	}
-	ft_setflag(stack_a, ar, get_lstsize(*stack_a));
+}
+
+void	ft_sub(t_stack **sa, int **ar)
+{
+	int	i;
+	int	pos;
+
+	i = 0;
+	pos = get_lstmin(*sa) + 1;
+	while (i++ < pos)
+		ar[0][i] = 1;
+	ft_gvone(sa, ar[0], pos);
+	ft_setflag(sa, ar, get_lstsize(*sa));
 }

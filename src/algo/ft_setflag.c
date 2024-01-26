@@ -6,36 +6,40 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:53:37 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 15:35:38 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 16:21:12 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "algo.h"
 
+static void fill_arr(int **tab,int len,int *i,int *t)
+{
+	while (*i < len)
+	{
+		if (t < tab[*i])
+			t = tab[*i];
+		i++;
+	}
+}
 
 void	ft_setflag(t_stack **sa, int **ar, int len)
 {
 	int	i;
-	int	s;
+	int	t;
 
 	i = 0;
-	s = 0;
-	while (i < len)
-	{
-		if (s < ar[0][i])
-			s = ar[0][i];
-		i++;
-	}
-	while (1)
+	t = 0;
+	fill_arr(ar,len, &i, &t);
+	while (1337)
 	{
 		if (i == -1)
 			break ;
-		i = getnt_lstsub(ar, s, len);
+		i = getnt_lstsub(ar, t, len);
 		get_lst_pos(*sa, i + 1)->sub = 1;
-		if (s == 0)
+		if (t == 0)
 			break;
-		s -= 1;
+		t -= 1;
 		len -= len - i;
 	}
 }
