@@ -1,44 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sub.c                            :+:      :+:    :+:   */
+/*   get_lstsub.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 11:57:53 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:37:11 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/25 12:16:53 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/26 12:13:53 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "tools.h"
 
-#include "algo.h"
-
-void	ft_sub(t_stack **stack_a, int **ar)
+int	get_lstsub(t_stack **head)
 {
-	int	i;
-	int	j;
-	int	s;
+	t_stack	*tmp;
+	int		i;
 
-	i = 0;
-	s = get_lstmin(*stack_a);
-	while (i++ < s)
-		ar[0][i] = 1;
+	tmp = *head;
 	i = 1;
-	while (s > 1)
+	while (tmp->next)
 	{
-		j = 0;
-		while (j < i)
-		{
-			if ((ft_find_node(*stack_a, i
-						+ 1)->value) > (ft_find_node(*stack_a, j
-						+ 1)->value) && ar[0][j] + 1 > ar[0][i])
-			{
-				ar[0][i] = ar[0][j] + 1;
-			}
-			j++;
-		}
+		if (tmp->sub == 0)
+			return (i);
 		i++;
-		s--;
+		tmp = tmp->next;
 	}
-	ft_setflag(stack_a, ar, get_lstsize(*stack_a));
+	return (0);
 }

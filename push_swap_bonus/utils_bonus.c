@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abechcha <abechcha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:24:40 by abechcha          #+#    #+#             */
-/*   Updated: 2024/01/12 19:13:04 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:38:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_lstsize(t_list *stack)
 	return (i);
 }
 
-t_list	*ft_find_node(t_list *head, int a)
+t_list	*get_lst_pos(t_list *head, int a)
 {
 	t_list	*tmp;
 	int		i;
@@ -71,7 +71,7 @@ void	ft_lstadd_front(t_list **head, t_list *new)
 void	ft_printf_result(t_list **stack_a, t_list **stack_b, t_store **store)
 {
 	(void)store;
-	if ((ft_is_sorted(stack_a) && ft_lstsize(*stack_b) == 0))
+	if ((is_lstsort(stack_a) && ft_lstsize(*stack_b) == 0))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);

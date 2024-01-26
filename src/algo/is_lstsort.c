@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
+/*   is_lstsort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:43:20 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:36:32 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:38:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "algo.h"
 
-int	ft_is_sorted(t_stack **stack_a)
+int	is_lstsort(t_stack **stack_a)
 {
 	t_stack	*tmp;
 	t_stack	*tmp1;

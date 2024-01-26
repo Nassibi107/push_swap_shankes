@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:53:37 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:37:02 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:32:56 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_setflag(t_stack **sa, int **ar, int len)
 		if (i == -1)
 			break ;
 		i = ft_next_longest(ar, s, len);
-		ft_find_node(*sa, i + 1)->sub = 1;
+		get_lst_pos(*sa, i + 1)->sub = 1;
 		if (s == 0)
 			break;
 		s -= 1;

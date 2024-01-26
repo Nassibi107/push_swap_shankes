@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:01:05 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 10:59:56 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:51:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,16 @@ void				ft_switch(t_stack *sa, t_stack *sb);
 void				ft_push(t_stack **src, t_stack **dest, int flag);
 void				shufting(t_stack **sa, t_stack **sb);
 void				sort(t_stack **sa);
-int				ft_is_sorted(t_stack **sa);
+int				is_lstsort(t_stack **sa);
 t_stack			*ft_creat_stack(char **s);
 t_stack			*ft_last(t_stack *head);
-t_stack			*ft_find_node(t_stack *head, int a);
 int				get_lstsub(t_stack **head);
-void				ft_push_flag(t_stack **sa, t_stack **sb);
-t_stack			*ft_find_target(int a, t_stack **sa);
-void				ft_set_target(t_stack **sa, t_stack **sb);
-void				ft_sort4(t_stack **sa, t_stack **sb);
+void				push_lsthook(t_stack **sa, t_stack **sb);
+t_stack			*get_lsthl(int a, t_stack **sa);
+void				set_lsthl(t_stack **sa, t_stack **sb);
+void				lst_sort_4(t_stack **sa, t_stack **sb);
 void				ft_sub(t_stack **sa, int **ar);
-void				ft_sort3(t_stack **sa);
+void				lst_sort_3(t_stack **sa);
 void				ft_setflag(t_stack **sb, int **ar, int len);
 void				rotate(t_stack **head, int flag);
 void				rrotate(t_stack **head, int flag);

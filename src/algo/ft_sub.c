@@ -1,28 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_sub.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 11:43:39 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:36:35 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/25 11:57:53 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/25 14:37:11 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "algo.h"
 
-void	ft_lstadd_front_s(t_stack **head, t_stack *new)
+void	ft_sub(t_stack **stack_a, int **ar)
 {
-	if (*head == NULL)
+	int	i;
+	int	j;
+	int	s;
+
+	i = 0;
+	s = get_lstmin(*stack_a);
+	while (i++ < s)
+		ar[0][i] = 1;
+	i = 1;
+	while (s > 1)
 	{
-		*head = new;
-		(*head)->next = NULL;
+		j = 0;
+		while (j < i)
+		{
+			if ((get_lst_pos(*stack_a, i
+						+ 1)->value) > (get_lst_pos(*stack_a, j
+						+ 1)->value) && ar[0][j] + 1 > ar[0][i])
+			{
+				ar[0][i] = ar[0][j] + 1;
+			}
+			j++;
+		}
+		i++;
+		s--;
 	}
-	else
-	{
-		new->next = *head;
-		*head = new;
-	}
+	ft_setflag(stack_a, ar, get_lstsize(*stack_a));
 }

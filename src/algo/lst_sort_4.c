@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort4.c                                         :+:      :+:    :+:   */
+/*   lst_sort_4.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:57:46 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:51:44 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:46:03 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	helper1(t_stack **sa, t_stack *p)
 		rrotate(sa, 1);
 }
 
-void	ft_sort4(t_stack **sa, t_stack **sb)
+void	lst_sort_4(t_stack **sa, t_stack **sb)
 {
 	int		i;
 	int		j;
@@ -33,7 +33,7 @@ void	ft_sort4(t_stack **sa, t_stack **sb)
 	while (i-- > 0)
 	{
 		min_pos = get_lstmin(*sa);
-		p = ft_find_node(*sa, min_pos);
+		p = get_lst_pos(*sa, min_pos);
 		if (min_pos > 2)
 			helper1(sa, p);
 		else
@@ -41,7 +41,7 @@ void	ft_sort4(t_stack **sa, t_stack **sb)
 				rotate(sa, 1);
 		ft_push(sa, sb, 0);
 	}
-	ft_sort3(sa);
+	lst_sort_3(sa);
 	ft_push(sb, sa, 1);
 	if (j == 2)
 		ft_push(sb, sa, 1);

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_node.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front_s.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 12:16:33 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:36:30 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/25 11:43:39 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/26 11:36:40 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+#include "tools.h"
 
-#include "algo.h"
-
-t_stack	*ft_find_node(t_stack *head, int a)
+void	ft_lstadd_front_s(t_stack **head, t_stack *new)
 {
-	t_stack	*tmp;
-	int		i;
-
-	tmp = head;
-	i = 1;
-	while (i < a)
+	if (*head == NULL)
 	{
-		if (tmp->next)
-			tmp = tmp->next;
-		i++;
+		*head = new;
+		(*head)->next = NULL;
 	}
-	return (tmp);
+	else
+	{
+		new->next = *head;
+		*head = new;
+	}
 }

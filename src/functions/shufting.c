@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:03:13 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 11:26:57 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:51:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	shufting(t_stack **sa, t_stack **sb)
 	if (!arr_sq)
 		return ;
 	ft_sub(sa, &arr_sq);
-	ft_push_flag(sa, sb);
+	push_lsthook(sa, sb);
 	while (get_lstsize(*sb))
 	{
-		ft_set_target(sa, sb);
+		set_lsthl(sa, sb);
 		hundler_moves(sb, sa);
 		ft_min_moves(sa, sb);
 		ft_push(sb, sa, 1);

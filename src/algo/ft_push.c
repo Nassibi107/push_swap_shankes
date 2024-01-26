@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:47:04 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:49:17 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:32:56 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_optimized(t_stack **stack)
 {
 	int	average;
 
-	average = ft_find_node(*stack, get_lstmin(*stack))->value;
-	average += ft_find_node(*stack, get_lstmax(*stack))->value;
+	average = get_lst_pos(*stack, get_lstmin(*stack))->value;
+	average += get_lst_pos(*stack, get_lstmax(*stack))->value;
 	if ((*stack)->value > average / 2)
 		rotate(stack, 0);
 }

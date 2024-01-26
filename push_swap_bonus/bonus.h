@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 09:29:04 by abechcha          #+#    #+#             */
-/*   Updated: 2024/01/25 18:18:07 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:38:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_store
 t_store				*ft_lstnew1(char *content);
 t_list				*ft_lstnew(int content);
 t_list				*ft_creat_list(char **s);
-t_list				*ft_find_node(t_list *head, int a);
+t_list				*get_lst_pos(t_list *head, int a);
 t_list				*ft_last(t_list *head);
 void				ft_print_error(t_list **stack_a, t_list **stack_b,
 						t_store **store);
@@ -64,7 +64,7 @@ int					ft_find_nl(const char *s, int c);
 void				ft_printf_result(t_list **stack_a, t_list **stack_b,
 						t_store **store);
 void				ft_error(void);
-int					ft_is_sorted(t_list **stack);
+int					is_lstsort(t_list **stack);
 void				ft_add_back(t_store **head, char *content);
 void				ft_push(t_list **src, t_list **dest);
 void				ft_lstadd_front(t_list **head, t_list *new);

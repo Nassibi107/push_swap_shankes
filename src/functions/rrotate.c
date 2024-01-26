@@ -29,7 +29,7 @@ void	rrotate(t_stack **head, int flag)
 	p = *head;
 	tmp = ft_last(p);
 	index = get_lstsize(p);
-	tmp1 = ft_find_node(p, index - 1);
+	tmp1 = get_lst_pos(p, index - 1);
 	tmp->next = p;
 	tmp1->next = NULL;
 	*head = tmp;

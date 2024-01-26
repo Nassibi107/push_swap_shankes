@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.h                                            :+:      :+:    :+:   */
+/*   set_lsthl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:38:12 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/25 11:52:08 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/26 11:51:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOOLS_H
-# define TOOLS_H
+#include "algo.h"
 
-# include "../../push_swap.h"
-# include <unistd.h>
+void	set_lsthl(t_stack **sa, t_stack **stack_b)
+{
+	t_stack	*tmp;
 
-#endif
+	tmp = *stack_b;
+	while (tmp)
+	{
+		tmp->hook = get_lsthl(tmp->value, sa);
+		if (tmp->hook == NULL)
+			tmp->hook = get_lst_pos(*sa, get_lstmin(*sa));
+		tmp = tmp->next;
+	}
+}

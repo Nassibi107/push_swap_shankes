@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_flag.c                                     :+:      :+:    :+:   */
+/*   push_lsthook.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:45:46 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 10:59:56 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:41:57 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 #include "algo.h"
 
-static void	helper(t_stack **sa, t_stack **sb)
+static void	wall(t_stack **sa, t_stack **sb)
 {
 	while ((*sa)->sub != 0)
 		rrotate(sa, 1);
 	ft_push(sa, sb, 0);
 }
 
-void	ft_push_flag(t_stack **sa, t_stack **sb)
+void	push_lsthook(t_stack **sa, t_stack **sb)
 {
 	int	size;
 	int	i;
@@ -33,7 +33,7 @@ void	ft_push_flag(t_stack **sa, t_stack **sb)
 		if (i == 0)
 			break ;
 		if (i > (size / 2))
-			helper(sa, sb);
+			wall(sa, sb);
 		else
 		{
 			if (i != 1)

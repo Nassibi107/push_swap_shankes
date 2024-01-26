@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abechcha <abechcha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:49:36 by abechcha          #+#    #+#             */
-/*   Updated: 2024/01/12 19:12:27 by abechcha         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:38:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bonus.h"
 
-int	ft_is_sorted(t_list **stack)
+int	is_lstsort(t_list **stack)
 {
 	t_list	*tmp;
 	t_list	*tmp1;
