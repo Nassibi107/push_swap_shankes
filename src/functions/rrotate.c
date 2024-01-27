@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "fun.h"
-
 
 void	rrotate(t_stack **head, int flag)
 {
@@ -23,9 +20,9 @@ void	rrotate(t_stack **head, int flag)
 	int		index;
 
 	if (flag == 1)
-		ft_putendl_fd("rra",1);
+		ft_putendl_fd("rra", 1);
 	else if (flag == 0)
-		ft_putendl_fd("rrb",1);
+		ft_putendl_fd("rrb", 1);
 	p = *head;
 	tmp = ft_last(p);
 	index = get_lstsize(p);

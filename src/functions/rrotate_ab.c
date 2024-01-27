@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:13:18 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 11:26:51 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:54:00 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rrotate_ab(t_stack **sa, t_stack **sb)
 {
-	ft_putendl_fd("rrr",1);
+	ft_putendl_fd("rrr", 1);
 	rrotate(sa, 2);
 	rrotate(sb, 2);
 }

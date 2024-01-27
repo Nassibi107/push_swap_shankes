@@ -1,0 +1,9 @@
+fun.h: OK!
+rotate.c: OK!
+rotate_ab.c: OK!
+rrotate.c: OK!
+rrotate_ab.c: OK!
+shufting.c: OK!
+sort.c: OK!
+swap.c: OK!
+swap_ab.c: OK!

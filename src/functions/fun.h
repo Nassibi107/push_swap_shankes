@@ -6,13 +6,13 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:25:14 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 12:08:56 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:51:42 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FUN_H
 # define FUN_H
 
-#include "../../push_swap.h"
+# include "../../push_swap.h"
 
 #endif

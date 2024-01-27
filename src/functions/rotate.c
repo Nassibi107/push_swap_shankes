@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "fun.h"
-
 
 void	rotate(t_stack **head, int flag)
 {
@@ -20,9 +18,9 @@ void	rotate(t_stack **head, int flag)
 	t_stack	*tmp;
 
 	if (flag == 1)
-		ft_putendl_fd("ra",1);
+		ft_putendl_fd("ra", 1);
 	else if (flag == 0)
-		ft_putendl_fd("rb",1);
+		ft_putendl_fd("rb", 1);
 	tmp = (*head)->next;
 	last = ft_last(*head);
 	last->next = *head;
