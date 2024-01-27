@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "algo.h"
 
-static void ft_gvone(t_stack **sa, int *tab, int minlst)
+static void	ft_gvone(t_stack **sa, int *tab, int minlst)
 {
 	int	i;
 	int	j;
@@ -28,7 +27,7 @@ static void ft_gvone(t_stack **sa, int *tab, int minlst)
 		{
 			vi = (get_lst_pos(*sa, i + 1)->value);
 			vj = (get_lst_pos(*sa, j + 1)->value);
-			if ( (vi > vj) && (tab[j] + 1 > tab[j]))
+			if ((vi > vj) && (tab[j] + 1 > tab[j]))
 				tab[j] = tab[j] + 1;
 			j++;
 		}

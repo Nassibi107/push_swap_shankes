@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:03:13 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 11:51:04 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 14:52:03 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	shufting(t_stack **sa, t_stack **sb)
 	{
 		set_lsthl(sa, sb);
 		hundler_moves(sb, sa);
-		ft_min_moves(sa, sb);
+		get_lstbmv(sa, sb);
 		ft_push(sb, sa, 1);
 	}
 	free(arr_sq);

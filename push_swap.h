@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:01:05 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 15:36:38 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:01:42 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct stack
 
 t_stack			*lststack(t_stack *lst);
 void				showlst(t_stack *head);
-void				ft_optimized(t_stack **stack);
+void				skeaper(t_stack **stack);
 void				ft_lstadd_front_s(t_stack **head, t_stack *j);
 t_stack			*ft_lstnew(int content);
 void				ft_switch(t_stack *sa, t_stack *sb);
@@ -74,9 +74,10 @@ void				ft_down(t_stack **sa, t_stack **sb,
 						t_stack *jk);
 t_stack	*get_lst_pos(t_stack *head, int a);
 void				hundler_moves(t_stack **sb, t_stack **sa);
-void				ft_min_moves(t_stack **sa, t_stack **sb);
+void				get_lstbmv(t_stack **sa, t_stack **sb);
 void				ft_free_linked_list(t_stack **stack);
 void				ft_free_string(char **s);
+void	ft_index(t_stack **sb, t_stack **sa, t_stack *jk);
 t_stack	*ft_befor_lst(t_stack *lst);
 void	ft_build_sa(char **str, t_stack **sa);
 int	is_double(char **rst);

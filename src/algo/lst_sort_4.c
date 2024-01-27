@@ -6,13 +6,12 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:57:46 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 17:24:37 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:47:52 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "algo.h"
+
 static void	d(t_stack **sa, t_stack *p)
 {
 	while ((*sa)->value != p->value)

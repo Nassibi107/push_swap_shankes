@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:34:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 17:32:49 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:42:46 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define ALGO_H
 
 # include "../../push_swap.h"
+# include <limits.h>
 
 #endif

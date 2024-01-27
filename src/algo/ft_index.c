@@ -1,45 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_lsthook.c                                     :+:      :+:    :+:   */
+/*   ft_index.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 11:45:46 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/27 15:48:37 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/27 14:53:34 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/27 14:57:32 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algo.h"
 
-static void	wall(t_stack **sa, t_stack **sb)
+void	ft_index(t_stack **sb, t_stack **sa, t_stack *jk)
 {
-	while ((*sa)->sub != 0)
-		rrotate(sa, 1);
-	ft_push(sa, sb, 0);
-}
-
-void	push_lsthook(t_stack **sa, t_stack **sb)
-{
-	int	size;
-	int	i;
-
-	size = get_lstsize(*sa);
-	while (1)
+	while (*sb != jk || *sa != jk->hook)
 	{
-		i = get_lstsub(sa);
-		if (i == 0)
+		if (jk->mv == 0 && jk->hook->mv == 0)
 			break ;
-		if (i > (size / 2))
-			wall(sa, sb);
+		if (jk->mv < 1 && jk->hook->mv < 1)
+			ft_down(sa, sb, jk);
+		else if (jk->mv >= 1 && jk->hook->mv >= 1)
+			ft_up(sa, sb, jk);
 		else
-		{
-			if (i != 1)
-			{
-				while ((*sa)->hook != 0)
-					rotate(sa, 1);
-			}
-			ft_push(sa, sb, 0);
-		}
+			ft_down_up(sa, sb, jk);
 	}
 }
