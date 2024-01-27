@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 17:54:25 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 16:04:45 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int ac, char **av)
 
 	sb = NULL;
 	sa = NULL;
-	if (ft_parsing(ac,av))
+	if (ft_parsing(ac, av))
 	{
 		if (ac > 1)
 		{
