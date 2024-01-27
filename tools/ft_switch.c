@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 11:30:09 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/26 11:46:03 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 16:00:42 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,11 @@ void	ft_switch(t_stack *sa, t_stack *sb)
 		lst_sort_3(&sa);
 	else if (len <= 5)
 	{
-		lst_sort_4(&sa,&sb);
+		lst_sort_4(&sa, &sb);
 	}
 	else if (len > 5)
 	{
-		shufting(&sa,&sb);
+		shufting(&sa, &sb);
 		sort(&sa);
 	}
-	// printf("\033[0;93m---------stack a------\n\033[0m");
-	// showlst(sa);
-	// printf("\033[0;93m---------stack b------\n\033[0m");
-	// showlst(sb);
 }

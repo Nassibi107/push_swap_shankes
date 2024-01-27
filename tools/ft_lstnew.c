@@ -6,11 +6,9 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:44:35 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 14:39:34 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 16:00:11 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "tools.h"
 
@@ -18,7 +16,7 @@ t_stack	*ft_lstnew(int content)
 {
 	t_stack	*p;
 
-	p = malloc(sizeof(t_list));
+	p = malloc(sizeof(t_stack));
 	if (!p)
 		return (NULL);
 	p->value = content;

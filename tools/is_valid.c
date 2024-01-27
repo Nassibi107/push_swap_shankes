@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 11:13:16 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 16:02:49 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	is_valid(char **rst)
 				return (0);
 			}
 		}
-		if ( ft_atoi(rst[i]) > 2147483647
+		if (ft_atoi(rst[i]) > 2147483647
 			|| ft_atoi(rst[i]) < -2147483647)
 			return (0);
 		i++;

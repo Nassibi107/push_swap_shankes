@@ -6,12 +6,11 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:32:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 11:12:47 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:59:29 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
-
 
 char	*ft_join(char **av, int len, int ac)
 {

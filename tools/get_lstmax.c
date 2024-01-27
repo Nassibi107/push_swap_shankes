@@ -6,12 +6,11 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:23:46 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/25 11:26:15 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/27 16:01:55 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
-
 
 int	get_lstmax(t_stack *sa)
 {
