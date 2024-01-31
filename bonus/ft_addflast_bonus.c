@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   ft_addflast_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/28 16:22:05 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/28 16:22:21 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "bonus.h"
 
-int	is_valid(char **rst)
+void	ft_addflast_bonus(t_stack_bs **head, t_stack_bs *new)
 {
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	while (rst[i])
+	if (*head == NULL)
 	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
-		i++;
+		*head = new;
+		(*head)->next = NULL;
 	}
-	return (1);
+	else
+	{
+		new->next = *head;
+		*head = new;
+	}
 }

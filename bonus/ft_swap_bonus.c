@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   ft_swap_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/28 15:19:10 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/28 16:03:13 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "bonus.h"
 
-int	is_valid(char **rst)
+void	ft_swap_bonus(t_stack **head, int flag)
 {
-	int		i;
-	int		j;
+	t_stack	*tmp;
 
-	i = 0;
-	j = 0;
-	while (rst[i])
+	if (flag == 1 || flag == 0 || flag == 2)
 	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
-		i++;
+		tmp = (*head)->next;
+		(*head)->next = tmp->next;
+		tmp->next = *head;
+		*head = tmp;
 	}
-	return (1);
 }

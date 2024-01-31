@@ -1,42 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   get_rst.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/31 11:29:49 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/31 11:56:25 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "fun.h"
 
-int	is_valid(char **rst)
+void	get_rst(char **str, t_stack **sb, t_stack **sa)
 {
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	while (rst[i])
-	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
-		i++;
-	}
-	return (1);
+	agg(str, sb, sa);
+	if (is_lstsort_bonus(sa) == 1 && !(*sb))
+		ft_putendl_fd("OK", 1);
+	else
+		ft_putendl_fd("KO", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:23:25 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/27 16:23:28 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/28 11:57:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void				ft_down(t_stack **sa, t_stack **sb, t_stack *jk);
 t_stack				*get_lst_pos(t_stack *head, int a);
 void				hundler_moves(t_stack **sb, t_stack **sa);
 void				get_lstbmv(t_stack **sa, t_stack **sb);
-void				ft_free_linked_list(t_stack **stack);
-void				ft_free_string(char **s);
+void				ft_lstclear(t_stack **stack);
+void				ft_srtclear(char **s);
 void				ft_index(t_stack **sb, t_stack **sa, t_stack *jk);
 t_stack				*ft_befor_lst(t_stack *lst);
 void				ft_build_sa(char **str, t_stack **sa);
@@ -79,5 +79,6 @@ int					is_double(char **rst);
 int					ft_lenjoin(char **av, int ac);
 char				*ft_join(char **av, int len, int ac);
 int					get_lst_id(t_stack **stack, int a);
+int					is_lstsort(t_stack **sa);
 int					is_valid(char **rst);
 #endif

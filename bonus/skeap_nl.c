@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   skeap_nl.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/28 15:01:20 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/28 15:05:18 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "bonus.h"
 
-int	is_valid(char **rst)
+char	*skeap_nl(char *arr)
 {
 	int		i;
-	int		j;
+	char	*str;
 
 	i = 0;
-	j = 0;
-	while (rst[i])
+	str = malloc(ft_strlen(arr) + 1);
+	if (!str)
+		return (NULL);
+	while (arr[i] && arr[i] != '\n')
 	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
+		str[i] = arr[i];
 		i++;
 	}
-	return (1);
+	str[i] = 0;
+	free(arr);
+	return (str);
 }

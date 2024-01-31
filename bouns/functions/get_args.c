@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   get_args.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/29 17:34:01 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/30 11:33:48 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "fun.h"
+#include <stdio.h>
 
-int	is_valid(char **rst)
+char	**get_args(void)
 {
-	int		i;
-	int		j;
+	char		*str;
+	char		*s;
+	char		**strs;
 
-	i = 0;
-	j = 0;
-	while (rst[i])
+	str = malloc(1);
+	if (!str)
+		return (0x0);
+	while (1337)
 	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
-		i++;
+		s = get_next_line(0);
+		if (!s)
+			break ;
+		if (!check_argg(s) && !chrck_arg(s))
+			return (0x0);
+		str = ft_strjoin(str, s);
 	}
-	return (1);
+	strs = ft_split(str, '\n');
+	return (strs);
 }

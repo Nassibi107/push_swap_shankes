@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   lststack_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/05 20:51:46 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/29 15:04:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "fun.h"
 
-int	is_valid(char **rst)
+t_stack	*lststack_bonus(t_stack *lst)
 {
-	int		i;
-	int		j;
+	t_stack	*temp;
 
-	i = 0;
-	j = 0;
-	while (rst[i])
-	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
-		i++;
-	}
-	return (1);
+	if (!lst)
+		return (0x0);
+	temp = lst;
+	if (!temp)
+		return (0);
+	while (temp->next)
+		temp = temp->next;
+	return (temp);
 }

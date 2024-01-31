@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2023/11/03 21:52:37 by ynassibi          #+#    #+#             */
+/*   Updated: 2023/11/12 11:07:09 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "libft.h"
 
-int	is_valid(char **rst)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	while (rst[i])
+	if (fd < 0)
+		return ;
+	if (n == -2147483648)
 	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
-		i++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (1);
+	if (n < 0)
+	{
+		n *= -1;
+		ft_putchar_fd('-', fd);
+	}
+	if (n < 10)
+		ft_putchar_fd(n + 48, fd);
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
 }

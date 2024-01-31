@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2023/10/31 19:43:41 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/16 16:34:01 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "libft.h"
 
-int	is_valid(char **rst)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int		i;
-	int		j;
+	void	*arr;
+	size_t	len_s;
 
-	i = 0;
-	j = 0;
-	while (rst[i])
-	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
-		i++;
-	}
-	return (1);
+	len_s = (nmemb * size);
+	arr = malloc(len_s);
+	if (!arr)
+		return (0);
+	ft_bzero(arr, len_s);
+	return (arr);
 }

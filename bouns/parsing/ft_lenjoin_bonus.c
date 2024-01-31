@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   ft_lenjoin_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/04 15:33:53 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/29 15:02:12 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "parsing.h"
 
-int	is_valid(char **rst)
+int	ft_lenjoin_bonus(char **av, int ac)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
+	int	len;
 
 	i = 0;
-	j = 0;
-	while (rst[i])
+	j = 1;
+	len = 0;
+	while (j < ac)
 	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
+		i = 0;
+		while (av[j][i])
 		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
+			len++;
+			i++;
 		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
-		i++;
+		if (j < ac - 1)
+			len += 1;
+		j++;
 	}
-	return (1);
+	return (len);
 }

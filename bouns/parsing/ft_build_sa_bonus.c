@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_build_sa.c                                      :+:      :+:    :+:   */
+/*   ft_build_sa_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 16:32:40 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:38:51 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:30:32 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "parsing.h"
 
 static void	ft_lstadd_back_sa(t_stack **sa, t_stack *nsa)
 {
@@ -23,7 +23,7 @@ static void	ft_lstadd_back_sa(t_stack **sa, t_stack *nsa)
 		*sa = nsa;
 		return ;
 	}
-	temp = lststack(*sa);
+	temp = lststack_bonus(*sa);
 	temp->next = nsa;
 }
 
@@ -42,7 +42,7 @@ static t_stack	*ft_lstnew_sa(int content)
 	return (new);
 }
 
-void	ft_build_sa(char **str, t_stack **sa)
+void	ft_build_sa_bonus(char **str, t_stack **sa)
 {
 	int	i;
 	int	val;

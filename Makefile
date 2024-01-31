@@ -2,10 +2,11 @@
 NAME = push_swap.a
 AOUT = push_swap
 
-SRCS_T = tools/ft_befor_lst.c tools/ft_build_sa.c tools/ft_double.c tools/ft_join.c tools/ft_free.c \
+SRCS_T = tools/ft_befor_lst.c tools/ft_build_sa.c tools/ft_double.c tools/ft_join.c tools/ft_lstclear.c \
          tools/ft_join.c tools/ft_last.c tools/ft_lenjoin.c tools/ft_lstadd_front_s.c tools/ft_lstnew.c \
          tools/ft_switch.c tools/get_lst_id.c  tools/get_lst_pos.c tools/get_lstmax.c  tools/get_lstmin.c  \
-         tools/get_lstsize.c tools/get_lstsub.c   tools/is_valid.c tools/lststack.c  tools/showlst.c
+         tools/get_lstsize.c tools/get_lstsub.c   tools/is_valid.c tools/lststack.c  tools/showlst.c \
+			tools/ft_lstclear.c tools/ft_srtclear.c
 
 SRCS_L = src/libft/ft_atoi.c src/libft/ft_putchar_fd.c src/libft/ft_putendl_fd.c src/libft/ft_putnbr_fd.c \
          src/libft/ft_split.c src/libft/ft_isdigit.c src/libft/ft_putstr_fd.c src/libft/ft_bzero.c src/libft/ft_calloc.c
@@ -27,7 +28,7 @@ OBJS_L = $(SRCS_L:.c=.o)
 OBJS_LG = $(SRCS_LG:.c=.o)
 OBJS_F = $(SRCS_F:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 HEAD = push_swap.h
 CC = cc

@@ -6,27 +6,29 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:43:20 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/27 15:47:29 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/01/29 12:01:08 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algo.h"
 
-int	is_lstsort(t_stack **stack_a)
+int	is_lstsort(t_stack **sa)
 {
 	t_stack	*tmp;
-	t_stack	*tmp1;
-	int		i;
+	t_stack	*tk;
+	int		vd;
 
-	tmp = *stack_a;
-	tmp1 = (*stack_a)->next;
-	i = 1;
-	while (tmp1)
+	tmp = *sa;
+	tk = (*sa)->next;
+	vd = 1;
+	while (tk)
 	{
-		if (tmp1->value < tmp->value)
-			i = 0;
+		if (tk->value < tmp->value)
+			vd = 0;
 		tmp = tmp->next;
-		tmp1 = tmp1->next;
+		tk = tk->next;
 	}
-	return (i);
+	if (vd == 1)
+		ft_lstclear(sa);
+	return (vd);
 }

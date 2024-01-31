@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2023/10/31 14:44:37 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/04 13:22:12 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "libft.h"
 
-int	is_valid(char **rst)
+long	ft_atoi(const char *str)
 {
 	int		i;
-	int		j;
+	int		s;
+	long	rst;
 
+	s = 1;
+	rst = 0;
 	i = 0;
-	j = 0;
-	while (rst[i])
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == 45 || str[i] == 43)
 	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
+		if (str[i] == 45)
+			s *= -1;
 		i++;
 	}
-	return (1);
+	while ((str[i] >= '0' && str[i] <= '9') && str[i])
+	{
+		rst *= 10;
+		rst += str[i] - '0';
+		i++;
+	}
+	return (rst * s);
 }

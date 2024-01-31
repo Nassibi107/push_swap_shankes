@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 13:45:23 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/09 09:26:30 by abechcha          #+#    #+#             */
+/*   Updated: 2024/01/29 09:44:24 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "src/libft/libft.h"
-
-static void	err(void)
-{
-	ft_putendl_fd("Error", 2);
-	exit(1);
-}
+#include "bonus.h"
 
 static int	is_empty(char *str)
 {
@@ -40,19 +33,15 @@ char	**input_checker(int ac, char **av)
 	len = ft_lenjoin(av, ac);
 	str = ft_join(av, len, ac);
 	rst = ft_split(str, ' ');
-	free(str);
 	if (is_valid(rst) && is_double(rst))
 		return (rst);
-	else
-		ft_srtclear(rst);
 	return (0x0);
 }
 
 static int	ft_parsing(int ac, char **av)
 {
-	int			j;
-	int			e;
-	char		**rst;
+	int		j;
+	int		e;
 
 	j = 1;
 	e = 0;
@@ -61,11 +50,10 @@ static int	ft_parsing(int ac, char **av)
 		if (is_empty(av[j++]))
 			e += 1;
 	}
-	rst = input_checker(ac, av);
 	if (!e)
 	{
-		if (rst != NULL)
-			return (ft_srtclear(rst), 1);
+		if (input_checker(ac, av) != NULL)
+			return (1);
 		else
 			return (0);
 	}
@@ -75,23 +63,26 @@ static int	ft_parsing(int ac, char **av)
 
 int	main(int ac, char **av)
 {
-	t_stack		*sa;
-	t_stack		*sb;
-	char		**str;
+	t_stack	*sa;
+	t_stack	*sb;
+	t_stack_bs	*sl;
+	char	*command;
 
 	sb = NULL;
-	if (ft_parsing(ac, av))
+	ft_parsing(ac, av);
+	command = get_next_line(0);
+	while (command)
 	{
-		if (ac > 1)
+		if (check_argg(command) || chrck_arg(command))
 		{
-			str = input_checker(ac, av);
-			ft_build_sa(str, &sa);
-			ft_srtclear(str);
-			ft_switch(sa, sb);
+			ft_add_back(&sl, skeap_nl(command));
 		}
 		else
-			exit(1);
+			r_err(&sa, &sb, &sl);
+		command = get_next_line(0);
 	}
-	else
-		err();
+	aggs(&sl, &sa, &sb);
+// 	ft_free_linked_list(&sa);
+// 	ft_free_linked_list(&sb);
+// 	ft_free_linked_list1(&sl);
 }

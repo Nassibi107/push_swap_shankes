@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 16:02:11 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 13:45:23 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/29 16:35:53 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/31 12:01:32 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "src/libft/libft.h"
+#include "parsing/parsing.h"
 
 static void	err(void)
 {
@@ -37,14 +36,14 @@ char	**input_checker(int ac, char **av)
 	char	**rst;
 	int		len;
 
-	len = ft_lenjoin(av, ac);
-	str = ft_join(av, len, ac);
+	len = ft_lenjoin_bonus(av, ac);
+	str = ft_join_bonus(av, len, ac);
 	rst = ft_split(str, ' ');
 	free(str);
-	if (is_valid(rst) && is_double(rst))
+	if (is_valid_bonus(rst) && ft_double_bonus(rst))
 		return (rst);
 	else
-		ft_srtclear(rst);
+		ft_srtclear_bonus(rst);
 	return (0x0);
 }
 
@@ -65,7 +64,7 @@ static int	ft_parsing(int ac, char **av)
 	if (!e)
 	{
 		if (rst != NULL)
-			return (ft_srtclear(rst), 1);
+			return (ft_srtclear_bonus(rst), 1);
 		else
 			return (0);
 	}
@@ -78,19 +77,21 @@ int	main(int ac, char **av)
 	t_stack		*sa;
 	t_stack		*sb;
 	char		**str;
+	char		**chek;
 
+	if (ac < 2)
+		exit(0);
 	sb = NULL;
 	if (ft_parsing(ac, av))
 	{
-		if (ac > 1)
-		{
-			str = input_checker(ac, av);
-			ft_build_sa(str, &sa);
-			ft_srtclear(str);
-			ft_switch(sa, sb);
-		}
+		chek = input_checker(ac, av);
+		ft_build_sa_bonus(chek, &sa);
+		ft_srtclear_bonus(chek);
+		str = get_args();
+		if (!str)
+			err();
 		else
-			exit(1);
+			get_rst(str, &sb, &sa);
 	}
 	else
 		err();

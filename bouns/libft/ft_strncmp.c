@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2023/11/02 11:26:13 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/28 16:46:48 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "libft.h"
 
-int	is_valid(char **rst)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		i;
-	int		j;
+	size_t			i;
+	unsigned char	*x;
+	unsigned char	*y;
 
+	x = (unsigned char *) s1;
+	y = (unsigned char *) s2;
 	i = 0;
-	j = 0;
-	while (rst[i])
+	while ((x[i] && y[i]) && n && (x[i] == y[i]))
 	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
 		i++;
+		n--;
 	}
-	return (1);
+	if (n == 0)
+		return (0);
+	else
+	{
+		return (x[i] - y[i]);
+	}
 }

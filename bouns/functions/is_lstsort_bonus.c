@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   is_lstsort_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/25 11:43:20 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/31 11:23:06 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "fun.h"
+#include <stdlib.h>
 
-int	is_valid(char **rst)
+int	is_lstsort_bonus(t_stack **sa)
 {
-	int		i;
-	int		j;
+	t_stack	*tmp;
+	t_stack	*tk;
+	int		vd;
 
-	i = 0;
-	j = 0;
-	while (rst[i])
+	if (!(*sa))
+		return (-1);
+	tmp = *sa;
+	tk = (*sa)->next;
+	vd = 1;
+	while (tk)
 	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
-		i++;
+		if (tk->value < tmp->value)
+			vd = 0;
+		tmp = tmp->next;
+		tk = tk->next;
 	}
-	return (1);
+	return (vd);
 }

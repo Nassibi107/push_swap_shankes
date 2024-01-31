@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   get_lst_pos_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:30:32 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/01/29 11:04:34 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/01/28 16:17:16 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/01/28 16:18:20 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "bonus.h"
 
-int	is_valid(char **rst)
+t_stack_bs	*get_lst_pos_bonus(t_stack_bs *head, int a)
 {
+	t_stack_bs	*tmp;
 	int		i;
-	int		j;
 
-	i = 0;
-	j = 0;
-	while (rst[i])
+	tmp = head;
+	i = 1;
+	while (i < a)
 	{
-		j = 0;
-		if (rst[i][j] == 45 || rst[i][j] == 43)
-			j++;
-		if (!rst[i][j])
-			return (0);
-		while (rst[i][j])
-		{
-			if (!ft_isdigit(rst[i][j++]))
-			{
-				return (0);
-			}
-		}
-		if (ft_atoi(rst[i]) > 2147483647
-			|| ft_atoi(rst[i]) < -2147483647)
-			return (0);
+		tmp = tmp->next;
 		i++;
 	}
-	return (1);
+	return (tmp);
 }
